@@ -10,12 +10,7 @@ import org.droidparts.annotation.inject.InjectDependency;
 
 import java.util.UUID;
 
-import no.nordicsemi.puckcentral.bluetooth.gatt.GattManager;
-
 public class GattSetNotificationOperation extends GattOperation {
-
-    @InjectDependency
-    GattManager mGattManager;
 
     private final UUID mServiceUuid;
     private final UUID mCharacteristicUuid;
