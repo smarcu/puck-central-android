@@ -38,7 +38,7 @@ public class GattManager {
         mCharacteristicChangeListeners = new HashMap<>();
     }
 
-    public synchronized void cancelCurrentOperationBundle() {
+    private synchronized void cancelCurrentOperationBundle() {
         L.v("Cancelling current operation. Queue size before: " + mQueue.size());
         if(mCurrentOperation != null && mCurrentOperation.getBundle() != null) {
             for(GattOperation op : mCurrentOperation.getBundle().getOperations()) {
@@ -198,7 +198,7 @@ public class GattManager {
         }
     }
 
-    public synchronized void setCurrentOperation(GattOperation currentOperation) {
+    private synchronized void setCurrentOperation(GattOperation currentOperation) {
         mCurrentOperation = currentOperation;
     }
 
